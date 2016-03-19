@@ -10,25 +10,8 @@
   }
   </style>
   <!-- Latest compiled and minified CSS -->
-  <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
   <script src="web3.min.js" type=text/javascript charset=utf-8></script>
-  <script type="text/javascript">
-
-      var Web3 = require('web3');
-      var web3 = new Web3();
-      web3.setProvider(new web3.providers.HttpProvider());
-      function watchBalance() {
-          var coinbase = web3.eth.coinbase;
-          var originalBalance = web3.eth.getBalance(coinbase).toNumber();
-          document.getElementById('coinbase').innerText = 'coinbase: ' + coinbase;
-          document.getElementById('original').innerText = ' original balance: ' + originalBalance + '    watching...';
-          web3.eth.filter('latest').watch(function() {
-              var currentBalance = web3.eth.getBalance(coinbase).toNumber();
-              document.getElementById("current").innerText = 'current: ' + currentBalance;
-              document.getElementById("diff").innerText = 'diff:    ' + (currentBalance - originalBalance);
-          });
-      }
-  </script>
 </head>
 <body>
   <div class="container">
