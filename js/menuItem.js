@@ -2,12 +2,17 @@
 var MenuItem = function(name){
   this.name = name;
   this.subMenus = [];
-  this.subMenuIndex = 0
+  this.subMenuIndex = 0;
+  this.actions = {};
 };
 
 MenuItem.prototype.addSubMenu = function(subMenuItem) {
   if (!(subMenuItem instanceof MenuItem)) return;
   this.subMenus.push(subMenuItem)
+};
+
+MenuItem.prototype.addAction = function(action) {
+  this.actions += action
 };
 
 // function nextItem() {
