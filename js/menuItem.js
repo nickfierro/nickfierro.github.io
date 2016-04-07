@@ -3,7 +3,7 @@ var MenuItem = function(name){
   this.name = name;
   this.subMenus = [];
   this.subMenuIndex = 0;
-  this.actions = {};
+  this.actions = [];
 };
 
 MenuItem.prototype.addSubMenu = function(subMenuItem) {
@@ -12,9 +12,12 @@ MenuItem.prototype.addSubMenu = function(subMenuItem) {
 };
 
 MenuItem.prototype.addAction = function(action) {
-  this.actions += action
+  this.actions.push(action)
 };
 
+MenuItem.prototype.performAction = function(func){
+  func()
+};
 // function nextItem() {
 //     i = i + 1; // increase i by one
 //     i = i % arr.length; // if we've gone too high, start from `0` again

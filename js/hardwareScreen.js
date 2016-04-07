@@ -84,4 +84,25 @@ HardwareScreen.prototype.selectLine = function(lineNum) {
     }
 
     return false;
-}
+};
+
+HardwareScreen.prototype.displayMenu = function(menuItem) {
+  //sanity check
+  // if (!(MenuItem instanceof MenuItem)) return;
+  // if (!(HardwareScreen instanceof HardwareScreen)) return;
+  // calls renderText on each entry
+  // calls setText on first entry
+
+  // loops through rest of main menu
+  for (i = 0; i < menuItem.subMenus.length; i++) {
+    var item = menuItem.subMenus[i];
+    console.log("displayMenu", item.name);
+    // safety check
+    if (item > this.rows) break;
+
+    // append menu item
+    this.appendText(item.name)
+  };
+  this.selectLine(1)
+  // switch()
+};
