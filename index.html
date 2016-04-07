@@ -17,8 +17,6 @@
 </head>
 <body>
   <div class="container">
-    <button id= class="btn btn-defaul" type="button" onclick=getCoinbase()>Coinbase</button>
-    <button id= class="btn btn-defaul" type="button" onclick=getBlock()>Get Block #</button>
     <button type="button" onClick=watchBalance()>watch balance</button>
     <div id='coinbase'></div>
     <div id="original"></div>
@@ -31,16 +29,16 @@
       </div>
       <div id='hardwareButtons' class='row'>
         <div id='directional-buttons' class='col-xs-6'>
-          <div class='col-xs-12'><button id='Button0' class='btn btn-default col-xs-1 col-xs-offset-5' onclick=display.selectLine(mainMenu.sortDown())>up</button></div>
+          <div class='col-xs-12'><button id='Button0' class='btn btn-default col-xs-1 col-xs-offset-5' onclick=display.selectLine(currentMenu.sortDown())>up</button></div>
           <div class='col-xs-6'><button id='Button3' class='btn btn-default col-xs-1 pull-right'>left</button></div>
           <div class='col-xs-6'><button id='Button1' class='btn btn-default col-xs-1 pull-left'>right</button></div>
-          <div class='col-xs-12'><button id='Button2' class='btn btn-default col-xs-1 col-xs-offset-5' onclick=display.selectLine(mainMenu.sortUp())>down</button></div>
+          <div class='col-xs-12'><button id='Button2' class='btn btn-default col-xs-1 col-xs-offset-5' onclick=display.selectLine(currentMenu.sortUp())>down</button></div>
         </div>
         <div id='action-buttons' class = 'col-xs-6'>
           <div class='col-xs-12'><button id='Button4' class='btn btn-default col-xs-1 col-xs-offset-5' type="button" style="border-radius: 50%; background-color:blue"></button></div>
           <div class='col-xs-6'><button id='Button7' class='btn btn-default col-xs-1 pull-right' type="button" style="border-radius: 50%; background-color:red"></button></div>
-          <div class='col-xs-6'><button id='Button5' class='btn btn-default col-xs-1 pull-left' onclick=sendAction(subMenu3.subMenus[subMenu3.subMenuIndex]) type="button" style="border-radius: 50%; background-color:green"></button>Action</div>
-          <div class='col-xs-12'><button id='Button6' class='btn btn-default col-xs-offset-5' onclick=displaySelected(mainMenu.subMenus[mainMenu.subMenuIndex]) type="button" style="border-radius: 50%; background-color:yellow"></button>Select</div>
+          <div class='col-xs-6'><button id='Button5' class='btn btn-default col-xs-1 pull-left' onclick=sendAction(currentMenu.subMenus[currentMenu.subMenuIndex]) type="button" style="border-radius: 50%; background-color:green"></button>Action</div>
+          <div class='col-xs-12'><button id='Button6' class='btn btn-default col-xs-offset-5' onclick=displaySelected(currentMenu.subMenus[currentMenu.subMenuIndex]) type="button" style="border-radius: 50%; background-color:yellow"></button>Select</div>
         </div>
       </div>
     </div>

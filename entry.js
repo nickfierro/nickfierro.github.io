@@ -76,6 +76,8 @@ var subMenu3Menu1 = new MenuItem("Get Coinbase");
 subMenu3Menu1.addAction(getCoinbase);
 
 var subMenu3Menu2 = new MenuItem("Get Block Number");
+subMenu3Menu2.addAction(getBlock);
+
 var subMenu3Menu3 = new MenuItem("Get Balance");
 
 mainMenu.addSubMenu(subMenu1);
@@ -94,17 +96,20 @@ console.log('display', display);
 display.setvirtualInterface('mydisplay');
 console.log('interface',  display.interface);
 
-display.displayMenu(mainMenu);
 
 //for console testing only
 window.myWeb3Instance = web3;
 
 console.log('web3', web3);
 
+var currentMenu = mainMenu;
+display.displayMenu(currentMenu);
+
 function displaySelected(mi) {
 //clear screen
 display.clearScreen();
-display.displayMenu(mi)
+display.displayMenu(mi);
+currentMenu = mi;
 };
 
 function sendAction(mi) {

@@ -30,6 +30,7 @@ MenuItem.prototype.sortUp = function(){
   i = i % this.subMenus.length; // if we've gone too high, start from `0` again
   this.subMenuIndex = i;
   console.log('subMenuIndex', this.subMenuIndex);
+  console.log(this);
   return this.subMenuIndex + 1; //for selectLine function
 };
 
@@ -49,5 +50,6 @@ MenuItem.prototype.sortDown = function() {
   i = i - 1; // decrease by one
   this.subMenuIndex = i;
   console.log('subMenuIndex', this.subMenuIndex);
+  console.log(this);
   return this.subMenuIndex + 1; // for selectLine function
 };
