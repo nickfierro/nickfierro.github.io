@@ -73,6 +73,8 @@ var subMenu2 = new MenuItem("View Notifications");
 var subMenu3 = new MenuItem("Account");
 
 var subMenu3Menu1 = new MenuItem("Get Coinbase");
+subMenu3Menu1.addAction(getCoinbase);
+
 var subMenu3Menu2 = new MenuItem("Get Block Number");
 var subMenu3Menu3 = new MenuItem("Get Balance");
 
@@ -102,9 +104,9 @@ console.log('web3', web3);
 function displaySelected(mi) {
 //clear screen
 display.clearScreen();
-displayMenu(mi, display)
+display.displayMenu(mi)
 };
 
-function performAction() {
-
+function sendAction(mi) {
+  mi.performAction(mi.actions[0])
 };
