@@ -5,6 +5,7 @@ var HardwareScreen = function(name, cols, rows) {
   this.rows = rows;
   this.cols = cols;
   this.interface = undefined;
+  this.currentMenu = undefined;
 };
 
 HardwareScreen.prototype.setvirtualInterface = function(str) {
@@ -92,7 +93,9 @@ HardwareScreen.prototype.displayMenu = function(menuItem) {
   // if (!(HardwareScreen instanceof HardwareScreen)) return;
   // calls renderText on each entry
   // calls setText on first entry
-
+  this.currentMenu = menuItem;
+  this.clearScreen();
+  
   // loops through rest of main menu
   for (i = 0; i < menuItem.subMenus.length; i++) {
     var item = menuItem.subMenus[i];

@@ -28,18 +28,10 @@ var hardwareButtons = [
   new HardwareButton(HardwareEnum.Button0),
   new HardwareButton(HardwareEnum.Button1),
   new HardwareButton(HardwareEnum.Button2),
-  new HardwareButton(HardwareEnum.Button3),
-  new HardwareButton(HardwareEnum.Button4),
-  new HardwareButton(HardwareEnum.Button5),
-  new HardwareButton(HardwareEnum.Button6),
-  new HardwareButton(HardwareEnum.Button7)
+  new HardwareButton(HardwareEnum.Button3)
 ];
 
 var virtualButtons = [
-  new VirtualButton(VirtualEnum.Up),
-  new VirtualButton(VirtualEnum.Right),
-  new VirtualButton(VirtualEnum.Down),
-  new VirtualButton(VirtualEnum.Left),
   new VirtualButton(VirtualEnum.Blue),
   new VirtualButton(VirtualEnum.Green),
   new VirtualButton(VirtualEnum.Yellow),
@@ -89,7 +81,7 @@ subMenu3.addSubMenu(subMenu3Menu3);
 console.log('mainMenu', mainMenu);
 
 //instanciate
-var display = new HardwareScreen("display", 40, 4);
+var display = new HardwareScreen("display", 20, 4);
 console.log('display', display);
 
 // next step: set lcd as virtual interface
@@ -102,16 +94,4 @@ window.myWeb3Instance = web3;
 
 console.log('web3', web3);
 
-var currentMenu = mainMenu;
-display.displayMenu(currentMenu);
-
-function displaySelected(mi) {
-//clear screen
-display.clearScreen();
-display.displayMenu(mi);
-currentMenu = mi;
-};
-
-function sendAction(mi) {
-  mi.performAction(mi.actions[0])
-};
+display.displayMenu(mainMenu);
