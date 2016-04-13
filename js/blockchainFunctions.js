@@ -29,7 +29,7 @@ function getBalance() {
   console.log(balance);
 };
 
-var source = " contract test { event MultipliedBy(uint ammount, uint time); function multiply(uint a) constant returns(uint d) { MultipliedBy(msg.value, block.timestamp); return a * 7; } } "
+var source = " contract test { event MultipliedBy(uint ammount, uint time); function multiply(uint a) constant returns(uint d) { MultipliedBy(a, block.timestamp); return a * 7; } } "
 
 var compiled = web3.eth.compile.solidity(source);
 

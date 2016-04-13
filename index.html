@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Screen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">  <title>Screen</title>
   <style>
   .col-centered{
     float: none;
     margin: 0 auto;
   }
   </style>
+
   <!-- Latest compiled and minified CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css.map" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="css/PINpad.css"> -->
   <script src="js/web3.min.js" type=text/javascript charset=utf-8></script>
   <script src="js/web3instance.js" type=text/javascript charset=utf-8></script>
 </head>
@@ -47,6 +48,15 @@
         <input type="number" id="value" onkeyup='callExampleContract()'></input>
     </div>
     <div id="result"></div>
+  </div>
+  <div id='to'>
+    <h3>To Address:</h3>
+    <input type="text" id="tovalue"></input>
+  </div>
+  <div>
+    <h3>Enter PIN</h3>
+    <div id="PINcode"></div>
+    <script src="js/PINpad.js"></script>
   </div>
 </body>
 <footer>
