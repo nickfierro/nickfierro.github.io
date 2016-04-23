@@ -29,7 +29,7 @@ function getBalance() {
   console.log(balance);
 };
 
-var source = " contract test { event MultipliedBy(uint ammount, uint time); function multiply(uint a) constant returns(uint d) { MultipliedBy(a, block.timestamp); return a * 7; } } "
+var source = " contract test { event Deposit(address from, uint value); function() { if (msg.value > 0) Deposit(msg.sender, msg.value);} } "
 
 var compiled = web3.eth.compile.solidity(source);
 
@@ -38,9 +38,6 @@ var code = compiled.test.code;
 var abi = compiled.test.info.abiDefinition;
 
 function createExampleContract() {
-    // hide create button
-    document.getElementById('create').style.visibility = 'hidden';
-    document.getElementById('code').innerText = code;
     // let's assume that coinbase is our account
     web3.eth.defaultAccount = web3.eth.coinbase;
     // create contract
@@ -68,13 +65,13 @@ function callExampleContract() {
 };
 
 
-function watchContractEvent(){
-  var event = myContract.allEvents().watch({}, '');
+function watchAllContractEvents(){
+  var events = myContract.allEvents().watch({}, '');
 };
 
 function watchEvent(){
-  var event = myContract.MultipliedBy();
-  event.watch(function (error, result) {
+  var events = myContract.MultipliedBy();
+  events.watch(function (error, result) {
     if (error) {
       console.log("Error: " + error);
     } else {

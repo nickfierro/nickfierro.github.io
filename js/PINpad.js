@@ -2,3 +2,10 @@ document.getElementById('PINcode').innerHTML = "<form action='' method='' name='
 function addNumber(element){ document.getElementById('PINbox').value = document.getElementById('PINbox').value+element.value;}
 function clearForm(element){ document.getElementById('PINbox').value = ""; }
 function submitForm(element) { if (element.value == "") { alert("Enter a PIN"); } else { alert("Your PIN has been sent! - "+element.value); document.getElementById('PINbox').value = ""; }; };
+
+//html
+// <div>
+//   <h3>Enter PIN</h3>
+//   <div id="PINcode"></div>
+//   <script src="js/PINpad.js"></script>
+// </div>
