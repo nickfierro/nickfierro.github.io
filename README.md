@@ -1,39 +1,17 @@
 # simplescreen
 Start geth node with:
 ```
-geth --rpc --rpccorsdomain "http://localhost:8080"
+geth --rpc --rpccorsdomain "http://nickfierro.github.io"
 
 ```
-
-Install node modules:
-```
-npm install
-```
-
-Install webpack globally to use CLI and node http-server:
-```
-sudo npm install -g webpack http-server
-```
-
-Run webpack
-```
-weback
-```
-Start http-server:
-
-```
-http-server
-```
+Or use a testrpc
 
 TODO:
-
-HARD CODE WEB INTERFACE SENDING TX DETAILS TO NETWORK
-HARD CODE DEVICE RECIEVING TX DETAILS, ALERT OF INCOMING TX REQUEST, STRUCTURE TRANSACTION TO SEND TO NETWORK
-VERIFY SENDING OF ETH
+MAKE EVERYTHING HAPPEN IN MENU INSTEAD OF DIALOGUE BOXES
 HARD CODE TRANSACTION RECIEVED ALERT + INCREASED BALANCE
 TEST
 
-THIS SHOULD BE GOOD FOR POC, BEGIN CLEANING 
+THIS SHOULD BE GOOD FOR POC, BEGIN CLEANING
 
 SEPARATE DEVICE AND WEB INTERFACE
 

@@ -44,6 +44,7 @@ var wallet = walletContract.new(
     console.log(e, contract);
     if (typeof contract.address != 'undefined') {
       console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+      alert(contract.address);
       console.log("I'm Watching for Incoming TX's");
       wallet.ConfirmationNeeded().watch(function(error,result){
         if (!error) {
