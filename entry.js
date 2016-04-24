@@ -61,7 +61,10 @@ var imclicked = function(){
 var mainMenu = new MenuItem("Main");
 
 var subMenu1 = new MenuItem("Map Buttons");
-var subMenu2 = new MenuItem("View Notifications");
+var subMenu2 = new MenuItem("Notifications");
+subMenu2.Notifications = [];
+
+
 var subMenu3 = new MenuItem("Account");
 
 var subMenu3Menu1 = new MenuItem("Get Coinbase");
