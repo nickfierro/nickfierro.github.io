@@ -15,3 +15,16 @@ function getTxData() {
 // use an eventlistener for the event
 var submit = document.getElementById('submit');
 submit.addEventListener('click', getTxData, false);
+
+function watchBalance() {
+  var coinbase = web3.eth.accounts[1];
+  var originalBalance = web3.fromWei(web3.eth.getBalance(coinbase).toNumber(), "ether");
+  console.log(' original balance: ' + originalBalance + '    watching...');
+  web3.eth.filter('latest').watch(function() {
+    var currentBalance = web3.fromWei(web3.eth.getBalance(coinbase).toNumber(), "ether");
+    console.log('current: ' + currentBalance);
+    console.log('diff:    ' + (currentBalance - originalBalance))
+  });
+};
+
+watchBalance()

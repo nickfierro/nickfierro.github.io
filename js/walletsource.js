@@ -19,7 +19,7 @@ function collectTxDetails(result){
 
 function confirmAndSend() {
   if ((confirm("CONFIRM TRANSACTION To: " + incomingTx.to + "\n Ammount: " + incomingTx.ammount + "Ether") === true) && (incomingTx.to.length > 5)) {
-    web3.eth.sendTransaction({from: web3.eth.coinbase, to: incomingTx.to, value: incomingTx.ammount}, function(err, res) {
+    web3.eth.sendTransaction({from: web3.eth.coinbase, to: incomingTx.to, value: web3.toWei(incomingTx.ammount, 'ether')}, function(err, res) {
       if (!err) alert("You sent a Transaction!! Your reciept is: " + res);
     });
   } else {

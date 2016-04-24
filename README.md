@@ -1,10 +1,15 @@
 # simplescreen
-Start geth node with:
+Start geth node on device with:
 ```
 geth --rpc --rpccorsdomain "http://nickfierro.github.io"
 
 ```
 Or use a testrpc
+
+Start Device
+Copy wallet contract address into js/walletabi.js under the contractAddress variable
+
+
 
 TODO:
 MAKE EVERYTHING HAPPEN IN MENU INSTEAD OF DIALOGUE BOXES
